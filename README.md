@@ -1,83 +1,139 @@
-Customer Churn Prediction Dashboard
-This is a full-stack web application designed to predict customer churn. It features a Python (Flask) backend that uses a machine learning model to analyze customer data, and a React frontend that provides an interactive dashboard to visualize the results.
+# 🌀 Customer Churn Prediction Dashboard
 
-FeaturesCSV Upload: 
-Easily upload customer data in CSV format.
-AI-Powered Predictions: Uses a pre-trained machine learning model to predict the churn probability for each customer.
-Interactive Dashboard: Visualizes key metrics and predictions in a user-friendly interface.
-Customer Segmentation: Automatically groups customers into strategic segments like "High-Value At-Risk" and "New & Unhappy.
-"Data-Driven Insights: Provides actionable insights through KPIs and charts, such as churn rate by city and the impact of customer complaints.
-Interactive Filtering: Allows users to drill down into specific customer segments by clicking on the charts.
+This is a full-stack web application designed to predict customer churn using machine learning. The system features a **Flask** backend powered by a trained model and a **React** frontend that offers an interactive dashboard for insights.
 
+---
 
-Tech Stack
+## 🚀 Features
 
-Backend:
-Python
-Flask
-Pandas
-Scikit-learn
-Gunicorn (for production)
-SQLite
+- **📁 CSV Upload**: Easily upload customer data in CSV format.
+- **🤖 AI-Powered Predictions**: Predicts churn probability using a pre-trained ML model.
+- **📊 Interactive Dashboard**: Visualizes key metrics in a user-friendly interface.
+- **👥 Customer Segmentation**: Groups customers into strategic segments like:
+  - *High-Value At-Risk*
+  - *New & Unhappy*
+- **📈 Data-Driven Insights**: View KPIs such as churn rate by city and complaint impact.
+- **🔍 Interactive Filtering**: Click on chart elements to filter the customer table dynamically.
 
-Frontend:
-React
-Vite
-TypeScript
-Axios
-Tailwind CSS
-Recharts (for charts)
-Lucide React (for icons)
+---
 
+## 🛠 Tech Stack
 
-Setup and Installation
-To get the project running locally, follow these steps for both the backend and frontend.
-1. Backend SetupPrerequisites: Python 3.8+ and pip.Navigate to the backend directory:cd backend
+### Backend
+- Python
+- Flask
+- Pandas
+- Scikit-learn
+- Flask-CORS
+- Gunicorn
+- SQLite
 
-Create and activate a virtual environment:# Create the environment
+### Frontend
+- React
+- Vite
+- TypeScript
+- Axios
+- Tailwind CSS
+- Recharts
+- Lucide React
+
+---
+
+## ⚙️ Setup and Installation
+
+### 1. Backend Setup
+
+#### 📋 Prerequisites
+- Python 3.8+
+- pip
+
+#### 🧰 Installation
+
+```bash
+cd backend
+
+# Create virtual environment
 python -m venv venv
 
-# Activate it (Windows)
+# Activate environment (Windows)
 .\venv\Scripts\activate
 
-# Activate it (macOS/Linux)
+# OR activate on macOS/Linux
 source venv/bin/activate
 
-Install the required Python packages:pip install Flask pandas scikit-learn flask-cors gunicorn
+# Install dependencies
+pip install Flask pandas scikit-learn flask-cors gunicorn
+```
 
-Place Your Model:Make sure your trained model file (e.g., churn_prediction_model.pkl) is in the backend directory.Run the Flask Server:flask run
+📦 Place Your Model
+Make sure your trained model file (e.g., churn_prediction_model.pkl) is inside the backend/ directory.
 
-The backend will now be running on http://127.0.0.1:5000.2. Frontend SetupPrerequisites: Node.js and npm.Navigate to the frontend directory:cd frontend
+🚀 Run the Server
+```bash
+Copy
+Edit
+flask run
+```
+Flask backend will run at: http://127.0.0.1:5000
 
-Install the required npm packages:npm install
+2. Frontend Setup
+📋 Prerequisites
+Node.js
 
-Run the React Development Server:npm run dev
+npm
 
-The frontend will now be running on http://localhost:5173 (or another port if 5173 is busy).
+🧰 Installation
+bash
+Copy
+Edit
+cd frontend
 
-How to UseOpen your web browser and navigate to the frontend URL (e.g., http://localhost:5173).
-You will see the file upload screen. 
-Click the designated area or drag and drop your customer data CSV file.
-Click the "Upload and Predict" button.
-The application will process the data and automatically display the interactive dashboard with all the predictions and insights.
-Click on the bars in the "Customer Segments" chart to filter the customer list below.
-API EndpointsThe Flask backend provides the following API endpoints:POST /upload: Uploads a CSV file, runs predictions, and saves data to the database.
-GET /customers: Retrieves a list of all customers and their churn predictions.GET /stats: Retrieves calculated statistics and KPIs for the dashboard.GET /segments: Retrieves the count of customers in each defined segment.
+# Install dependencies
+npm install
+🚀 Run the Development Server
+bash
+```
+Copy
+Edit
+npm run dev
+```
+Frontend will run at: http://localhost:5173
 
+🧑‍💻 How to Use
+Open http://localhost:5173 in your browser.
 
+Upload your CSV file containing customer data.
 
-Project Structure.
+Click "Upload and Predict".
+
+View churn predictions and KPIs on the interactive dashboard.
+
+Click on any chart to filter customers dynamically.
+
+🧩 API Endpoints
+Method	Endpoint	Description
+POST	/upload	Upload CSV, run predictions, save to database
+GET	/customers	Get all customers and their predictions
+GET	/stats	Retrieve dashboard statistics and KPIs
+GET	/segments	Retrieve count of customers per defined segment
+
+📁 Project Structure
+project-root/
 ├── backend/
-│   ├── venv/
-│   ├── app.py                      # Main Flask application
-│   ├── churn_prediction_model.pkl  # Your trained ML model
-│   └── customers.db                # SQLite database file
-│
-└── frontend/
-    ├── node_modules/
-    ├── public/
-    └── src/
-        ├── components/             # (Optional) For smaller components
-        ├── App.tsx                 # Main React application component
-        ├── main.tsx                # Entry point for the React app
-        └── index.css               # Tailwind CSS directives
+│   ├── venv/                    # Virtual environment
+│   ├── app.py                   # Main Flask app
+│   ├── churn_prediction_model.pkl # Trained ML model
+│   └── customers.db             # SQLite DB file
+├── frontend/
+│   ├── node_modules/
+│   ├── public/
+│   └── src/
+│       ├── components/          # (Optional) Reusable components
+│       ├── App.tsx             # Main React component
+│       ├── main.tsx            # React entry point
+│       └── index.css           # Tailwind CSS config
+
+
+📬 Contact
+Feel free to open an issue or fork the repo to improve it!
+
